@@ -1,221 +1,227 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Portfolio</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Drishti | Creative Portfolio</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-        body {
-            font-family: "Inter", sans-serif;
-            color: #f5f5f5;
-            line-height: 1.6;
-            background: #000;
-        }
+body{
+    font-family:Inter,sans-serif;
+    background:#000;
+    color:#f5f5f5;
+    line-height:1.6;
+}
 
-        /* CONTAINER */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
+.container{width:90%;max-width:1200px;margin:auto}
 
-        /* NAV */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 1px solid #222;
-            z-index: 10;
-        }
+/* NAV */
+header{
+    position:sticky;
+    top:0;
+    background:rgba(0,0,0,.9);
+    border-bottom:1px solid #222;
+    z-index:10;
+}
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0
+}
+nav ul{
+    display:flex;
+    gap:24px;
+    list-style:none
+}
+nav a{
+    color:#fff;
+    text-decoration:none;
+}
+nav a:hover{color:#aaa}
 
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    background:
+        linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
+        url("profile.jpg");
+    background-size:cover;
+    background-position:center right;
+}
+.hero-content{
+    max-width:880px;
+    margin:auto;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 24px;
-        }
+/* ANIMATED COLOR HEADING */
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(96px,11vw,140px);
+    line-height:1.05;
+    background:linear-gradient(120deg,#ff6ec4,#7873f5,#4ade80,#38bdf8,#ff6ec4);
+    background-size:300% 300%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:gradientMove 6s ease infinite;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #f5f5f5;
-            font-weight: 500;
-        }
+@keyframes gradientMove{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 
-        nav a:hover {
-            color: #aaa;
-        }
+.hero .sub{
+    font-family:"Space Grotesk",sans-serif;
+    letter-spacing:3px;
+    font-size:13px;
+    margin:28px 0;
+    color:#aaa;
+}
+.hero p{
+    color:#ccc;
+    font-size:19px;
+    max-width:760px;
+    margin:auto;
+}
 
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background:
-                linear-gradient(
-                    rgba(0, 0, 0, 0.75),
-                    rgba(0, 0, 0, 0.85)
-                ),
-                url("profile.jpg");
-            background-size: cover;
-            background-position: right center;
-            background-repeat: no-repeat;
-        }
+/* PROJECT BUTTON */
+.hero-btn{
+    margin-top:42px;
+    display:inline-block;
+    padding:14px 44px;
+    border:1px solid #fff;
+    border-radius:999px;
+    text-decoration:none;
+    color:#fff;
+    letter-spacing:2px;
+    animation:pulseGlow 1.8s ease-in-out infinite;
+}
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-        }
+@keyframes pulseGlow{
+    0%{box-shadow:0 0 0 rgba(255,255,255,0)}
+    50%{box-shadow:0 0 18px rgba(255,255,255,.5)}
+    100%{box-shadow:0 0 0 rgba(255,255,255,0)}
+}
 
-        .hero-content {
-            max-width: 600px;
-        }
+.hero-btn:hover{
+    background:#fff;
+    color:#000;
+    animation:none;
+}
 
-        .badge {
-            display: inline-block;
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
-            color: #aaa;
-        }
+section{padding:120px 0}
 
-        .hero h1 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 48px;
-            margin-bottom: 16px;
-            color: #fff;
-        }
+/* SECTION HEADINGS */
+.section-title{
+    font-family:"Playfair Display",serif;
+    font-size:54px;
+    margin-bottom:44px;
+}
 
-        .hero p {
-            color: #ccc;
-        }
+/* ABOUT */
+.about{max-width:780px}
+.about p{font-size:19px;color:#bbb}
 
-        /* SECTIONS */
-        section {
-            padding: 80px 0;
-        }
+/* GRIDS */
+.projects-grid,
+.tools-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
+}
 
-        h2 {
-            font-family: "Space Grotesk", sans-serif;
-            margin-bottom: 24px;
-            color: #fff;
-        }
+/* CARDS */
+.card{
+    padding:34px;
+    border:1px solid #222;
+    border-radius:18px;
+    background:#0a0a0a;
+    cursor:pointer;
+    transition:.3s;
+}
+.card:hover{transform:translateY(-8px)}
+.card h3{
+    font-family:"Space Grotesk",sans-serif;
+    margin-bottom:12px;
+}
 
-        p {
-            color: #bbb;
-        }
+/* MODAL */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:99;
+}
+.modal-content{
+    background:#0a0a0a;
+    padding:48px;
+    max-width:720px;
+    border-radius:22px;
+}
+.close{
+    position:absolute;
+    top:30px;
+    right:40px;
+    font-size:28px;
+    cursor:pointer;
+}
 
-        /* SKILLS */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-        }
+/* CONTACT */
+.contact-form{
+    max-width:500px;
+    display:flex;
+    flex-direction:column;
+    gap:16px
+}
+input,textarea{
+    background:#111;
+    border:1px solid #333;
+    color:#fff;
+    padding:12px;
+    border-radius:8px
+}
+button{
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#fff;
+    font-weight:600;
+    cursor:pointer
+}
 
-        .skill-card {
-            padding: 24px;
-            border: 1px solid #222;
-            border-radius: 12px;
-            background: #0a0a0a;
-        }
-
-        /* PROJECTS */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 24px;
-        }
-
-        .project-card {
-            padding: 24px;
-            border: 1px solid #222;
-            border-radius: 12px;
-            background: #0a0a0a;
-        }
-
-        /* CONTACT */
-        .contact-form {
-            max-width: 500px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        input, textarea {
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            background: #111;
-            color: #fff;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            color: #777;
-        }
-
-        button {
-            padding: 12px;
-            background: #fff;
-            color: #000;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 32px 0;
-            border-top: 1px solid #222;
-            margin-top: 80px;
-            color: #777;
-        }
-
-        /* Responsive tweaks */
-        @media (min-width: 900px) {
-            .hero-grid {
-                grid-template-columns: 1fr 360px;
-                gap: 40px;
-            }
-            .hero {
-                background-position: center right;
-            }
-        }
-    </style>
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:32px 0;
+    border-top:1px solid #222;
+    color:#777
+}
+</style>
 </head>
 
 <body>
 
 <header>
     <div class="container nav">
-        <div class="brand">
-            <a href="#home" style="text-decoration:none;color:#fff;font-weight:700;font-family:'Space Grotesk', sans-serif;">
-                DRISHTI
-            </a>
-        </div>
+        <strong>DRISHTI</strong>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#tools">Tools</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -224,101 +230,98 @@
 
 <main>
 
-    <!-- HERO / HOME -->
-    <section id="home" class="hero" aria-label="Home">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <span class="badge">DESIGNER & DEVELOPER</span>
-                <h1>Hi, I'm Drishti — I design visual systems and communication experiences.</h1>
-                <p>Creating clear experiences and thoughtful interfaces backed by modern front-end development.</p>
-                <p style="margin-top:20px;">
-                    <a href="#contact" style="display:inline-block;padding:10px 16px;background:#fff;color:#000;border-radius:8px;text-decoration:none;font-weight:600;">
-                        About Me
-                    </a>
-                </p>
-            </div>
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Creative Portfolio</h1>
+        <div class="sub">VISUAL COMMUNICATION DESIGN</div>
+        <p>Exploring typography, visual systems, and digital narratives through concept-driven design and experimentation.</p>
+        <a href="#projects" class="hero-btn">PROJECTS</a>
+    </div>
+</section>
+
+<section id="about" class="container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about">
+        <p>
+            I'm Drishti, a Visual Communication Designer who believes design is more than aesthetics — it's a system of meaning, clarity, and intent. My work focuses on translating ideas into thoughtful visual narratives through branding, typography, and visual systems.I approach design with a balance of concept and craft, ensuring every visual decision serves a purpose. Influenced by culture, context, and emerging futures, I enjoy creating work that is both relevant today and adaptable for tomorrow.Driven by curiosity and a strong attention to detail, I aim to design communication that feels clear, impactful, and timeless.
+        </p>
+    </div>
+</section>
+
+<section id="projects" class="container">
+    <h2 class="section-title">Selected Projects</h2>
+    <div class="projects-grid">
+        <div class="card" onclick="openModal('Typography Systems','Exploration of hierarchy, grids, and expressive typographic systems.')">
+            <h3>Typography Systems</h3>
+            <p>Type & layout exploration.</p>
         </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="container" aria-labelledby="about-heading">
-        <h2 id="about-heading">About</h2>
-        <p>I'm Drishti, a visual communication design student exploring how typography, systems, and digital interfaces shape meaning. I focus on building clear visual structures and use experimental tools like generative AI as part of my design exploration. I’m interested in creating thoughtful visual communication that balances concept, clarity, and experimentation across print and digital contexts.
-
-    <!-- SKILLS -->
-    <section id="skills" class="container" aria-labelledby="skills-heading">
-        <h2 id="skills-heading">Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3 style="margin-bottom:8px;font-family:'Space Grotesk', sans-serif;">Typography</h3>
-                <p>Designing interfaces, visual systems, and prototypes.</p>
-            </div>
-            <div class="skill-card">
-                <h3 style="margin-bottom:8px;font-family:'Space Grotesk', sans-serif;">Illustrated Storybook</h3>
-                <p>HTML, CSS, JavaScript, responsive layouts and accessibility.</p>
-            </div>
-            <div class="skill-card">
-                <h3 style="margin-bottom:8px;font-family:'Space Grotesk', sans-serif;">Generative AI</h3>
-                <p>Visual identity, typography, and color systems.</p>
-            </div>
+        <div class="card" onclick="openModal('Illustrated Storybook','Narrative-driven illustrated book design.')">
+            <h3>Illustrated Storybook</h3>
+            <p>Visual storytelling.</p>
         </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="container" aria-labelledby="projects-heading">
-        <h2 id="projects-heading">Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3 style="margin-bottom:8px;font-family:'Space Grotesk', sans-serif;">Project One</h3>
-                <p>Short description of the project and your role.</p>
-            </div>
-            <div class="project-card">
-                <h3 style="margin-bottom:8px;font-family:'Space Grotesk', sans-serif;">Project Two</h3>
-                <p>Short description of the project and technologies used.</p>
-            </div>
-            <div class="project-card">
-                <h3 style="margin-bottom:8px;font-family:'Space Grotesk', sans-serif;">Project Three</h3>
-                <p>Short description of the project and outcomes.</p>
-            </div>
+        <div class="card" onclick="openModal('Perfume Visuals','Conceptual perfume bottle design and imagery.')">
+            <h3>Perfume Visuals</h3>
+            <p>Creative product design.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="container" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact</h2>
-        <form class="contact-form" onsubmit="handleSubmit(event)">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
-            <textarea name="message" rows="6" placeholder="Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+<!-- TOOLS (CLICKABLE) -->
+<section id="tools" class="container">
+    <h2 class="section-title">Software & Tools</h2>
+    <div class="tools-grid">
+        <div class="card" onclick="openModal('Adobe Express','Quick visual content creation for layouts and brand graphics.')">
+            <h3>Adobe Express</h3>
+            <p>Quick graphics, digital layouts, and visual storytelling.</p>
+        </div>
+        <div class="card" onclick="openModal('Figma','Interface design, prototyping, and collaboration.')">
+            <h3>Figma</h3>
+            <p>Interface design, prototyping, and collaboration.</p>
+        </div>
+        <div class="card" onclick="openModal('Adobe Suite','Typography, print, image-making, and visual systems.')">
+            <h3>Adobe Suite</h3>
+            <p>Typography, print, image-making, and visual systems.</p>
+        </div>
+        <div class="card" onclick="openModal('Generative AI','Experimental tools used to extend design thinking.')">
+            <h3>Generative AI</h3>
+                <p>Experimental tools used to extend design thinking.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT (ADDED AFTER TOOLS) -->
+<section id="contact" class="container">
+    <h2 class="section-title">Contact</h2>
+    <form class="contact-form">
+        <input placeholder="Your Name" required>
+        <input placeholder="Your Email" required>
+        <textarea rows="6" placeholder="Your Message"></textarea>
+        <button>Send Message</button>
+    </form>
+</section>
 
 </main>
 
 <footer>
-    <div class="container">
-        <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
-    </div>
+    <p>&copy; <span id="year"></span> Drishti</p>
 </footer>
 
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+<div class="modal" id="modal">
+    <div class="close" onclick="closeModal()">×</div>
+    <div class="modal-content">
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+    </div>
+</div>
 
-    // Simple client-side submit handler (replace with your backend integration)
-    function handleSubmit(e) {
-        e.preventDefault();
-        const form = e.currentTarget;
-        const data = {
-            name: form.name.value.trim(),
-            email: form.email.value.trim(),
-            message: form.message.value.trim()
-        };
-        if (!data.name || !data.email || !data.message) return;
-        // For demo: show a simple alert. Replace with fetch/XHR to send data.
-        alert('Thanks, ' + data.name + '! Message sent.');
-        form.reset();
-    }
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+function openModal(t,x){
+    modal.style.display="flex";
+    modalTitle.innerText=t;
+    modalText.innerText=x;
+}
+function closeModal(){modal.style.display="none";}
 </script>
 
 </body>
