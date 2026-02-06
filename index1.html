@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Drishti | Creative Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Inter,sans-serif;
+  background:#000;
+  color:#f5f5f5;
+  line-height:1.6;
+}
+
+.container{width:90%;max-width:1200px;margin:auto}
+
+/* NAV */
+header{
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,.9);
+  border-bottom:1px solid #222;
+  z-index:10;
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 0
+}
+nav ul{
+  display:flex;
+  gap:24px;
+  list-style:none
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+}
+nav a:hover{color:#aaa}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85)),
+    url("profile.jpg");
+  background-size:cover;
+  background-position:center right;
+}
+.hero-content{
+  max-width:880px;
+  margin:auto;
+}
+
+/* ANIMATED COLOR HEADING */
+.hero h1{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(96px,11vw,140px);
+  line-height:1.05;
+  background:linear-gradient(120deg,#ff6ec4,#7873f5,#4ade80,#38bdf8,#ff6ec4);
+  background-size:300% 300%;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.hero .sub{
+  font-family:"Space Grotesk",sans-serif;
+  letter-spacing:3px;
+  font-size:13px;
+  margin:28px 0;
+  color:#aaa;
+}
+.hero p{
+  color:#ccc;
+  font-size:19px;
+  max-width:760px;
+  margin:auto;
+}
+
+/* PROJECT BUTTON */
+.hero-btn{
+  margin-top:42px;
+  display:inline-block;
+  padding:14px 44px;
+  border:1px solid #fff;
+  border-radius:999px;
+  text-decoration:none;
+  color:#fff;
+  letter-spacing:2px;
+  animation:pulseGlow 1.8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow{
+  0%{box-shadow:0 0 0 rgba(255,255,255,0)}
+  50%{box-shadow:0 0 18px rgba(255,255,255,.5)}
+  100%{box-shadow:0 0 0 rgba(255,255,255,0)}
+}
+
+.hero-btn:hover{
+  background:#fff;
+  color:#000;
+  animation:none;
+}
+
+section{padding:120px 0}
+
+/* SECTION HEADINGS */
+.section-title{
+  font-family:"Playfair Display",serif;
+  font-size:54px;
+  margin-bottom:44px;
+}
+
+/* ABOUT */
+.about{max-width:780px}
+.about p{font-size:19px;color:#bbb}
+
+/* GRIDS */
+.projects-grid,
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+/* CARDS */
+.card{
+  padding:34px;
+  border:1px solid #222;
+  border-radius:18px;
+  background:#0a0a0a;
+  cursor:pointer;
+  transition:.3s;
+}
+.card:hover{transform:translateY(-8px)}
+.card h3{
+  font-family:"Space Grotesk",sans-serif;
+  margin-bottom:12px;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.9);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:99;
+}
+.modal-content{
+  background:#0a0a0a;
+  padding:48px;
+  max-width:720px;
+  border-radius:22px;
+}
+.close{
+  position:absolute;
+  top:30px;
+  right:40px;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* CONTACT */
+.contact-form{
+  max-width:500px;
+  display:flex;
+  flex-direction:column;
+  gap:16px
+}
+input,textarea{
+  background:#111;
+  border:1px solid #333;
+  color:#fff;
+  padding:12px;
+  border-radius:8px
+}
+button{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#fff;
+  font-weight:600;
+  cursor:pointer
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:32px 0;
+  border-top:1px solid #222;
+  color:#777
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <strong>DRISHTI</strong>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>Creative Portfolio</h1>
+    <div class="sub">VISUAL COMMUNICATION DESIGN</div>
+    <p>Exploring typography, visual systems, and digital narratives through concept-driven design and experimentation.</p>
+    <a href="#projects" class="hero-btn">PROJECTS</a>
+  </div>
+</section>
+
+<section id="about" class="container">
+  <h2 class="section-title">About Me</h2>
+  <div class="about">
+    <p>
+      I’m Drishti, a Visual Communication Designer who believes design is more than aesthetics — it’s a system of meaning, clarity, and intent. My work focuses on translating ideas into thoughtful visual narratives through branding, typography, and visual systems.I approach design with a balance of concept and craft, ensuring every visual decision serves a purpose. Influenced by culture, context, and emerging futures, I enjoy creating work that is both relevant today and adaptable for tomorrow.Driven by curiosity and a strong attention to detail, I aim to design communication that feels clear, impactful, and timeless.
+    </p>
+  </div>
+</section>
+
+<section id="projects" class="container">
+  <h2 class="section-title">Selected Projects</h2>
+  <div class="projects-grid">
+    <div class="card" onclick="openModal('Typography Systems','Exploration of hierarchy, grids, and expressive typographic systems.')">
+      <h3>Typography Systems</h3>
+      <p>Type & layout exploration.</p>
+    </div>
+    <div class="card" onclick="openModal('Illustrated Storybook','Narrative-driven illustrated book design.')">
+      <h3>Illustrated Storybook</h3>
+      <p>Visual storytelling.</p>
+    </div>
+    <div class="card" onclick="openModal('Perfume Visuals','Conceptual perfume bottle design and imagery.')">
+      <h3>Perfume Visuals</h3>
+      <p>Creative product design.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS (CLICKABLE) -->
+<section id="tools" class="container">
+  <h2 class="section-title">Software & Tools</h2>
+  <div class="tools-grid">
+    <div class="card" onclick="openModal('Adobe Express','Quick visual content creation for layouts and brand graphics.')">
+      <h3>Adobe Express</h3>
+      <p>Quick graphics, digital layouts, and visual storytelling.</p>
+    </div>
+    <div class="card" onclick="openModal('Figma','Interface design, prototyping, and collaboration.')">
+      <h3>Figma</h3>
+      <p>Interface design, prototyping, and collaboration.</p>
+    </div>
+    <div class="card" onclick="openModal('Adobe Suite','Typography, print, image-making, and visual systems.')">
+      <h3>Adobe Suite</h3>
+      <p>Typography, print, image-making, and visual systems.</p>
+    </div>
+    <div class="card" onclick="openModal('Generative AI','Experimental tools used to extend design thinking.')">
+      <h3>Generative AI</h3>
+        <p>Experimental tools used to extend design thinking.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT (ADDED AFTER TOOLS) -->
+<section id="contact" class="container">
+  <h2 class="section-title">Contact</h2>
+  <form class="contact-form">
+    <input placeholder="Your Name" required>
+    <input placeholder="Your Email" required>
+    <textarea rows="6" placeholder="Your Message"></textarea>
+    <button>Send Message</button>
+  </form>
+</section>
+
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Drishti</p>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="close" onclick="closeModal()">×</div>
+  <div class="modal-content">
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+function openModal(t,x){
+  modal.style.display="flex";
+  modalTitle.innerText=t;
+  modalText.innerText=x;
+}
+function closeModal(){modal.style.display="none";}
+</script>
+
+</body>
+</html>
